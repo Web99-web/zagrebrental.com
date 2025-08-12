@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>ZagrebRental.com – Zagreb | Apartments, Hotels & Experiences</title>
+  <meta name="description" content="Zagreb: Apartments, Hotels, City-Break & Erlebnisse. Premium domena za najam i oglašavanje. Kontakt: zagrebrental2000@gmail.com" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://zagrebrental.com/">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zagreb – Apartments, Hotels & Experiences">
+  <meta property="og:description" content="Premium domena za partnere u Zagrebu. Oglasi i suradnje dobrodošli.">
+  <meta property="og:url" content="https://zagrebrental.com/">
+  <meta property="og:site_name" content="ZagrebRental.com">
+  <!-- Možeš zamijeniti ovom lokalnom datotekom npr. /og-zagreb.jpg -->
+  <meta property="og:image" content="https://images.unsplash.com/photo-1542044801-7f9b9c3d6c64?auto=format&fit=crop&w=1600&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1542044801-7f9b9c3d6c64?auto=format&fit=crop&w=1600&q=80">
+
+  <!-- JSON-LD: WebSite + SearchAction -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"ZagrebRental.com",
+    "url":"https://zagrebrental.com/",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://zagrebrental.com/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Kann ich hier werben?","acceptedAnswer":{"@type":"Answer","text":"Ja. 10–20 kuriranih oglasnih pozicija za hotele, apartmane, agencije, atrakcije i događaje u Zagrebu."}},
+      {"@type":"Question","name":"Ist die Domain zur Kooperation verfügbar?","acceptedAnswer":{"@type":"Answer","text":"Da, dostupna za najam/suradnju ili preuzimanje. Kontakt: zagrebrental2000@gmail.com"}}
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-overlay: rgba(0,22,40,.46);
+      --card-bg: rgba(255,255,255,.94);
+      --accent:#1e9bd7; --accent-2:#1276a7; --text:#0d1b24;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:#fff;
+      background-image:
+        linear-gradient(var(--bg-overlay),var(--bg-overlay)),
+        /* Panorama Zagreba (Gornji grad / krovovi) */
+        url("https://images.unsplash.com/photo-1542044801-7f9b9c3d6c64?auto=format&fit=crop&w=2000&q=80");
+      background-size:cover; background-position:center; background-attachment:fixed;
+      display:flex; align-items:start; justify-content:center; padding:28px;
+    }
+    .shell{width:min(1200px,100%)}
+    .hero{
+      text-align:center; padding:36px 28px; border-radius:22px;
+      backdrop-filter: blur(2px);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .brand{letter-spacing:.5px;font-weight:700;font-size:clamp(28px,5vw,48px);margin:.2rem 0 .6rem}
+    .tag{opacity:.95;font-size:clamp(14px,2.2vw,18px);margin:0 0 1.25rem}
+    .langs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:0 0 18px}
+    .lang-btn{border:1px solid rgba(255,255,255,.35); color:#fff; background:transparent;
+      padding:8px 12px; border-radius:999px; cursor:pointer; font-weight:600; transition:.18s}
+    .lang-btn[aria-pressed="true"], .lang-btn:hover{background:var(--accent); border-color:transparent}
+
+    .intro-grid{display:grid;gap:18px;grid-template-columns:1fr}
+    @media (min-width:980px){ .intro-grid{grid-template-columns:1.6fr .9fr} }
+
+    .card{ text-align:left; color:var(--text); background:var(--card-bg);
+      padding:22px; border-radius:16px; box-shadow:0 12px 28px rgba(0,0,0,.18) }
+    .card h2{margin:0 0 .45rem; font-size:clamp(18px,2.2vw,22px)}
+    .card p{margin:.4rem 0; line-height:1.6}
+    .cta{ margin-top:14px; display:inline-flex; align-items:center; gap:10px;
+      background:var(--accent); color:#fff; text-decoration:none; font-weight:700;
+      padding:12px 18px; border-radius:999px; transition:.2s background }
+    .cta:hover{background:var(--accent-2)}
+    .mini{opacity:.8; font-size:12px; margin-top:8px}
+    footer{margin-top:18px; text-align:center; opacity:.85; font-size:12px; color:#e9f6ff}
+    a{color:var(--accent-2); font-weight:600}
+
+    /* Ad grid */
+    .ads{
+      margin-top:22px;
+      display:grid; gap:14px;
+      grid-template-columns:1fr 1fr;
+    }
+    @media (min-width:980px){ .ads{ grid-template-columns:repeat(5,1fr) } }
+
+    .ad{
+      position:relative; overflow:hidden; border-radius:16px;
+      background:#f6fbff; color:#0b2a3a; border:1px solid #e6eef6;
+      display:flex; flex-direction:column; min-height:190px;
+    }
+    .ad img{
+      width:100%; height:120px; object-fit:cover; display:block;
+      filter:saturate(1.05);
+    }
+    .ad .label{
+      padding:10px 12px; font-weight:700; line-height:1.3;
+    }
+    .ad .sub{padding:0 12px 12px; font-size:12px; opacity:.8}
+    .ad .pin{
+      position:absolute; top:8px; left:8px; font-size:11px;
+      background:rgba(255,255,255,.9); padding:4px 8px; border-radius:999px;
+      border:1px solid rgba(0,0,0,.06);
+    }
+
+    /* Counter badge */
+    #counter{
+      position:fixed; right:10px; bottom:10px;
+      background:rgba(255,255,255,.88); color:#0b2a3a;
+      border-radius:999px; padding:6px 10px; font-size:11px;
+      box-shadow:0 4px 14px rgba(0,0,0,.2); opacity:.55; user-select:none
+    }
+
+    .faq details{margin:.4rem 0}
+    .faq summary{cursor:pointer; font-weight:600}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <h1 class="brand">ZagrebRental.com</h1>
+      <p class="tag" id="tagline">
+        Zagreb: <strong>Apartmani</strong>, <strong>Hoteli</strong>, <strong>City-break</strong> &amp; iskustva. Suradnje i oglasi dobrodošli.
+      </p>
+
+      <div class="langs" role="tablist" aria-label="Language selector">
+        <button class="lang-btn" data-lang="de" aria-pressed="true">🇩🇪 Deutsch</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="hr" aria-pressed="false">🇭🇷 Hrvatski</button>
+      </div>
+
+      <!-- Intro -->
+      <div class="intro-grid" id="content">
+        <!-- DE -->
+        <article class="card lang lang-de">
+          <h2>Premium-Domain für Zagreb</h2>
+          <p>Perfekt für <strong>Hotels, Apartments, Agenturen, Attraktionen</strong> und Veranstalter. Markenstark &amp; SEO-freundlich für Suchen wie „Zagreb Apartments“, „Hotel Zagreb“, „City-Break Zagreb“.</p>
+          <a class="cta" href="mailto:zagrebrental2000@gmail.com?subject=Kooperation%20ZagrebRental.com">Kooperation/Anzeige anfragen</a>
+          <div class="mini">E-Mail: <a href="mailto:zagrebrental2000@gmail.com">zagrebrental2000@gmail.com</a></div>
+        </article>
+
+        <aside class="card lang lang-de">
+          <h2>Ihre Marke in Zagreb</h2>
+          <p>10–20 kuratierte Anzeigenplätze, Fokus auf Reisende mit klarer Buchungsabsicht.</p>
+          <a class="cta" href="mailto:zagrebrental2000@gmail.com?subject=Anzeige%20ZagrebRental.com">Jetzt Angebot erhalten</a>
+        </aside>
+
+        <!-- EN -->
+        <article class="card lang lang-en" hidden>
+          <h2>Premium domain for Zagreb</h2>
+          <p>Built for <strong>accommodations, agencies, attractions</strong> and event promoters. Brandable &amp; SEO-friendly for queries like “Zagreb apartments”, “hotels Zagreb”, “Zagreb city break”.</p>
+          <a class="cta" href="mailto:zagrebrental2000@gmail.com?subject=Partnership%20ZagrebRental.com">Partner with us</a>
+          <div class="mini">E-mail: <a href="mailto:zagrebrental2000@gmail.com">zagrebrental2000@gmail.com</a></div>
+        </article>
+
+        <aside class="card lang lang-en" hidden>
+          <h2>Showcase your brand</h2>
+          <p>10–20 curated ad slots targeting travelers with high intent.</p>
+          <a class="cta" href="mailto:zagrebrental2000@gmail.com?subject=Ad%20placement%20ZagrebRental.com">Get a quote</a>
+        </aside>
+
+        <!-- HR -->
+        <article class="card lang lang-hr" hidden>
+          <h2>Premium domena za Zagreb</h2>
+          <p>Idealno za <strong>hotele, apartmane, turističke agencije</strong> te atrakcije i događaje. Prepoznatljiva &amp; SEO-prijateljska za pojmove “apartmani Zagreb”, “hotel Zagreb”, “city break Zagreb”.</p>
+          <a class="cta" href="mailto:zagrebrental2000@gmail.com?subject=Suradnja%20ZagrebRental.com">Pošaljite upit</a>
+          <div class="mini">E-mail: <a href="mailto:zagrebrental2000@gmail.com">zagrebrental2000@gmail.com</a></div>
+        </article>
+
+        <aside class="card lang lang-hr" hidden>
+          <h2>Istaknite svoju marku</h2>
+          <p>10–20 oglasnih mjesta uz fokus na putnike s jasnom namjerom rezervacije.</p>
+          <a class="cta" href="mailto:zagrebrental2000@gmail.com?subject=Oglas%20ZagrebRental.com">Zatraži ponudu</a>
+        </aside>
+      </div>
+
+      <!-- 10 AD BOXES (Zagreb teme) -->
+      <div class="ads" id="ads">
+        <div class="ad">
+          <span class="pin">#1</span>
+          <img src="https://images.unsplash.com/photo-1602867741746-533b9befd3aa?auto=format&fit=crop&w=1200&q=80" alt="Upper Town / Gornji grad">
+          <div class="label" data-de="Ihr Hotel im Zentrum" data-en="Your central hotel" data-hr="Vaš hotel u centru">Ihr Hotel im Zentrum</div>
+          <div class="sub"   data-de="Gornji grad • Katedrale" data-en="Upper Town • Cathedral" data-hr="Gornji grad • Katedrala">Gornji grad • Katedrale</div>
+        </div>
+
+        <div class="ad">
+          <span class="pin">#2</span>
+          <img src="https://images.unsplash.com/photo-1614094082617-6d3fdcc9c7ee?auto=format&fit=crop&w=1200&q=80" alt="Apartments Zagreb">
+          <div class="label" data-de="Ihre Apartments Zagreb" data-en="Your Zagreb apartments" data-hr="Vaši zagrebački apartmani">Ihre Apartments Zagreb</div>
+          <div class="sub"   data-de="Donji grad • Parking" data-en="Lower Town • Parking" data-hr="Donji grad • Parking">Donji grad • Parking</div>
+        </div>
+
+        <div class="ad">
+          <span class="pin">#3</span>
+          <img src="https://images.unsplash.com/photo-1586861203926-bf66c999a4f8?auto=format&fit=crop&w=1200&q=80" alt="Maksimir Park">
+          <div class="label" data-de="Ihr Familienhotel" data-en="Your family hotel" data-hr="Vaš obiteljski hotel">Ihr Familienhotel</div>
+          <div class="sub"   data-de="Maksimir • Zoo" data-en="Maksimir • Zoo" data-hr="Maksimir • Zoološki">Maksimir • Zoo</div>
+        </div>
+
+        <div class="ad">
+          <span class="pin">#4</span>
+          <img src="https://images.unsplash.com/photo-1547462430-aba2b4d6c0f8?auto=format&fit=crop&w=1200&q=80" alt="Advent Zagreb lights">
+          <div class="label" data-de="Ihre Advent-Kampagne" data-en="Your Advent campaign" data-hr="Vaša Advent kampanja">Ihre Advent-Kampagne</div>
+          <div class="sub"   data-de="Weihnachtsmärkte" data-en="Christmas markets" data-hr="Božićni sajam">Weihnachtsmärkte</div>
+        </div>
+
+        <div class="ad">
+          <span class="pin">#5</span>
+          <img src="https://images.unsplash.com/photo-1580818114104-3a6dc7b0e547?auto=format&fit=crop&w=1200&q=80" alt="Jarun lake">
+          <div class="label" data-de="Sport & See Jarun" data-en="Sport & Lake Jarun" data-hr="Sport & jezero Jarun">Sport & See Jarun</div>
+          <div class="sub"   data-de="SUP • Triathlon" data-en="SUP • Triathlon" data-hr="SUP • Triatlon">SUP • Triathlon</div>
+        </div>
+
+        <div class="ad">
+          <span class="pin">#6</span>
+          <img src="https://images.unsplash.com/photo-1543302296-24a1d470a7d6?auto=format&fit=crop&w=1200&q=80" alt="Museums & culture">
+          <div class="label" data-de="Museen & Kultur" data-en="Museums & Culture" data-hr="Muzeji & kultura">Museen & Kultur</div>
+          <div class="sub"   data-de="Muzej prekinutih veza" data-en="Museum of Broken Relationships" data-hr="Muzej prekinutih veza">Muzej prekinutih veza</div>
+        </div>
+
+        <div class="ad">
+          <span class="pin">#7</span>
+          <img src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?auto=format&fit=crop&w=1200&q=80" alt="Mirogoj arcades">
+          <div class="label" data-de="Stadtführungen" data-en="City tours" data-hr="Gradske ture">Stadtführungen</div>
+          <div class="sub"   data-de="Mirogoj Arkaden" data-en="Mirogoj arcades" data-hr="Mirogojske arkade">Mirogoj Arkaden</div>
+        </div>
+
+        <div class="ad">
+          <span class="pin">#8</span>
+          <img src="https://images.unsplash.com/photo-1600206694783-2e2a1fb9e5ef?auto=format&fit=crop&w=1200&q=80" alt="Zagreb food">
+          <div class="label" data-de="Gastro & Street Food" data-en="Gastro & Street food" data-hr="Gastro & street food">Gastro & Street Food</div>
+          <div class="sub"   data-de="Dolac • Tkalča" data-en="Dolac • Tkalča" data-hr="Dolac • Tkalča">Dolac • Tkalča</div>
+        </div>
+
+        <div class="ad">
+          <span class="pin">#9</span>
+          <img src="https://images.unsplash.com/photo-1543357480-c60d926de223?auto=format&fit=crop&w=1200&q=80" alt="Events & concerts">
+          <div class="label" data-de="Ihre Events & Konzerte" data-en="Your events & concerts" data-hr="Vaši eventi i koncerti">Ihre Events & Konzerte</div>
+          <div class="sub"   data-de="Arena • Šalata" data-en="Arena • Šalata" data-hr="Arena • Šalata">Arena • Šalata</div>
+        </div>
+
+        <div class="ad">
+          <span class="pin">#10</span>
+          <img src="https://images.unsplash.com/photo-1526779259212-939e64788e3c?auto=format&fit=crop&w=1200&q=80" alt="Day trips from Zagreb">
+          <div class="label" data-de="Ausflüge ab Zagreb" data-en="Day trips from Zagreb" data-hr="Izleti iz Zagreba">Ausflüge ab Zagreb</div>
+          <div class="sub"   data-de="Plitvice • Zagorje" data-en="Plitvice • Zagorje" data-hr="Plitvice • Zagorje">Plitvice • Zagorje</div>
+        </div>
+      </div>
+
+      <!-- FAQ blok -->
+      <div class="card faq" style="margin-top:18px; text-align:left">
+        <h2>FAQ</h2>
+        <details><summary>Beste Reisezeit für Zagreb?</summary><p>Proljeće i jesen za city-break; Advent u prosincu; ljeto za Jarun i otvorene evente.</p></details>
+        <details><summary>Mogu li rezervirati oglas?</summary><p>Da. Pošaljite upit na <a href="mailto:zagrebrental2000@gmail.com">zagrebrental2000@gmail.com</a>.</p></details>
+      </div>
+
+      <footer>© ZagrebRental.com • Static landing</footer>
+    </section>
+  </main>
+
+  <!-- Diskretan brojač (start ≥ 10000) -->
+  <div id="counter" title="Visits">—</div>
+
+  <script>
+    // language switcher
+    const btns = document.querySelectorAll('.lang-btn');
+    const groups = { de: document.querySelectorAll('.lang-de'), en: document.querySelectorAll('.lang-en'), hr: document.querySelectorAll('.lang-hr') };
+    const tagline = document.getElementById('tagline');
+    const lines = {
+      de:"Zagreb: Apartments, Hotels, City-Break & Erlebnisse. Partnerschaften & Anzeigen willkommen.",
+      en:"Zagreb: apartments, hotels, city break & experiences. Partnerships and ads welcome.",
+      hr:"Zagreb: apartmani, hoteli, city-break i doživljaji. Suradnje i oglasi dobrodošli."
+    };
+
+    function show(lang){
+      Object.keys(groups).forEach(k => groups[k].forEach(el => el.hidden = (k!==lang)));
+      btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang===lang)));
+      tagline.textContent = lines[lang];
+      document.documentElement.lang = lang==='hr' ? 'hr' : lang;
+
+      // Promijeni natpise u oglasnim kutijama prema jeziku
+      document.querySelectorAll('.ad .label').forEach(el=>{
+        const key = 'data-'+lang;
+        if(el.getAttribute(key)) el.textContent = el.getAttribute(key);
+      });
+      document.querySelectorAll('.ad .sub').forEach(el=>{
+        const key = 'data-'+lang;
+        if(el.getAttribute(key)) el.innerHTML = el.getAttribute(key);
+      });
+
+      try{ localStorage.setItem('zr_lang', lang); }catch(e){}
+    }
+    btns.forEach(b=>b.addEventListener('click',()=>show(b.dataset.lang)));
+    try{ const saved = localStorage.getItem('zr_lang'); if(saved&&groups[saved]) show(saved); }catch(e){}
+
+    // Counter (CountAPI) start at >= 10000
+    (async()=>{
+      const badge = document.getElementById('counter');
+      const NS = 'zagrebrental';
+      const KEY = 'visits';
+      const endpoint = (p)=>`https://api.countapi.xyz/${p}`;
+      const fmt = (n)=> n.toLocaleString('de-DE');
+      const lsKey = 'zr_visits_ls';
+      const lsBump = ()=>{
+        let v = 10000;
+        try{
+          const cur = parseInt(localStorage.getItem(lsKey)||'10000',10);
+          v = isNaN(cur)?10000:cur; v++; localStorage.setItem(lsKey, String(v));
+        }catch(e){}
+        badge.textContent = `Visits: ${fmt(v)}`;
+      };
+      try{
+        let res = await fetch(endpoint(`get/${NS}/${KEY}`));
+        if(res.status === 404){
+          await fetch(endpoint(`create?namespace=${NS}&key=${KEY}&value=10000`));
+        }else{
+          const cur = await res.json();
+          if(typeof cur.value === 'number' && cur.value < 10000){
+            await fetch(endpoint(`set?namespace=${NS}&key=${KEY}&value=10000`));
+          }
+        }
+        const hit = await fetch(endpoint(`hit/${NS}/${KEY}`));
+        const data = await hit.json();
+        badge.textContent = `Visits: ${fmt(data.value||10000)}`;
+      }catch(e){ lsBump(); }
+    })();
+  </script>
+
+  <!-- Global lazy-load + fallback -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('img').forEach(img => {
+      img.loading = 'lazy';
+      img.referrerPolicy = 'no-referrer';
+      if (!img.getAttribute('onerror')) {
+        img.setAttribute('onerror',
+          "this.onerror=null; this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80';"
+        );
+      }
+    });
+  });
+  </script>
+
+</body>
+</html>
