@@ -137,6 +137,8 @@
 
     .faq details{margin:.4rem 0}
     .faq summary{cursor:pointer; font-weight:600}
+    html{ scroll-behavior:smooth; }
+
   </style>
 </head>
 <body>
@@ -326,6 +328,16 @@
         <details><summary>Beste Reisezeit für Zagreb?</summary><p>Proljeće i jesen za city-break; Advent u prosincu; ljeto za Jarun i otvorene evente.</p></details>
         <details><summary>Mogu li rezervirati oglas?</summary><p>Da. Pošaljite upit na <a href="mailto:zagrebrental2000@gmail.com">zagrebrental2000@gmail.com</a>.</p></details>
       </div>
+      
+      <!-- CONTACT -->
+      <div id="contact" class="card" style="margin-top:22px; text-align:left">
+        <h2>Kontakt</h2>
+        <p>Za oglase i suradnje pošaljite upit.</p>
+        <p>
+        E-mail: <a href="mailto:zagrebrental2000@gmail.com">zagrebrental2000@gmail.com</a><br>
+        WhatsApp: <a href="https://wa.me/385914828202">+385 914828202</a>
+        </p>
+      </div>
 
       <footer>© ZagrebRental.com • Static landing</footer>
     </section>
@@ -414,28 +426,31 @@
   });
   </script>
 
-  <script>
-  (function(){
-    const defaultEmail = "zagrebrental2000@gmail.com";
-    document.querySelectorAll('.ad').forEach((card, idx) => {
-      // ako već postoji <a> unutra, ne diramo (već je link)
-      if (card.querySelector('a[href]')) return;
-
-      const pin = (card.querySelector('.pin')?.textContent || '').replace('#','') || (idx+1);
-      const label = card.querySelector('.label')?.textContent?.trim() || 'Ad';
-      const href = card.dataset.href 
-        || `mailto:${defaultEmail}?subject=${encodeURIComponent('ZagrebRental — Ad slot #'+pin+' — '+label)}`;
-
-      const open = () => window.open(href, '_blank');
-
-      card.style.cursor = 'pointer';
-      card.setAttribute('role', 'link');
-      card.setAttribute('tabindex', '0');
-      card.addEventListener('click', open);
-      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }});
+ <script>
+(function(){
+  const DEFAULT_TARGET = '#contact';
+  function go(href){
+    if(!href || href.startsWith('#')){
+      const el = document.querySelector(href || DEFAULT_TARGET);
+      if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }else{
+      window.location.href = href;
+    }
+  }
+  document.querySelectorAll('.ad').forEach(card => {
+    if (card.querySelector('a[href]')) return;   // ako već ima link, ne diramo
+    const href = card.dataset.href || DEFAULT_TARGET;
+    card.style.cursor = 'pointer';
+    card.setAttribute('role','link');
+    card.setAttribute('tabindex','0');
+    card.addEventListener('click', ()=>go(href));
+    card.addEventListener('keydown', e => {
+      if(e.key==='Enter' || e.key===' '){ e.preventDefault(); go(href); }
     });
-  })();
+  });
+})();
 </script>
+
 
 
 </body>
