@@ -414,5 +414,29 @@
   });
   </script>
 
+  <script>
+  (function(){
+    const defaultEmail = "zagrebrental2000@gmail.com";
+    document.querySelectorAll('.ad').forEach((card, idx) => {
+      // ako već postoji <a> unutra, ne diramo (već je link)
+      if (card.querySelector('a[href]')) return;
+
+      const pin = (card.querySelector('.pin')?.textContent || '').replace('#','') || (idx+1);
+      const label = card.querySelector('.label')?.textContent?.trim() || 'Ad';
+      const href = card.dataset.href 
+        || `mailto:${defaultEmail}?subject=${encodeURIComponent('ZagrebRental — Ad slot #'+pin+' — '+label)}`;
+
+      const open = () => window.open(href, '_blank');
+
+      card.style.cursor = 'pointer';
+      card.setAttribute('role', 'link');
+      card.setAttribute('tabindex', '0');
+      card.addEventListener('click', open);
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }});
+    });
+  })();
+</script>
+
+
 </body>
 </html>
